@@ -1,0 +1,13 @@
+/* .map-chart {
+  color: blue;
+  background-color: brown;
+} */
+
+path {
+  
+  fill: #ccc;
+}
+
+path:hover {
+  fill: blue;
+}
