@@ -52,9 +52,13 @@
       const now = new Date().getTime();
       let dist = countDownDate - now;
       let days = Math.floor(dist / (1000 * 60 * 60 * 24));
+      days = (days < 10 ? '0' : '') + days;
       let hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      hours = (hours < 10 ? '0' : '') + hours;
       let minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      minutes = (minutes < 10 ? '0' : '') + minutes;
       let seconds = Math.floor((dist % (1000 * 60)) / 1000);
+      seconds = (seconds < 10 ? '0' : '') + seconds;
       
       showTime.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
       
