@@ -39,21 +39,10 @@ document.getElementById('sunny-age').textContent = year - 2018;
 
 // Home page type effect
 var typed = new Typed('#things', {
-  strings: ["Frontend Developer", "Network Administrator", "Test Engineer"],
+  strings: ["Frontend Developer", "Network Admin", "Test Engineer"],
   typeSpeed: 100,
   loop: true,
   showCursor: false
 });
-
-
-
-
-
-
-
-
-
-
-
 
 console.log(year);
