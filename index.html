@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Eralp Kor</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Portfolio web site">
+  <meta name="author" content="Eralp Kor">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136529494-1"></script>
   <script>
@@ -15,11 +16,14 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
+
     gtag('config', 'UA-136529494-1');
   </script>
   <link rel="shortcut icon" type="image/x-icon" href="img/Calculator-red.ico"/>
   <title>Eralp Kor</title>
-
+  <!-- d3.js stuff -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="./css/styles.css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,39 +35,236 @@
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
 
+
   <!-- Custom styles for this template -->
-  <link href="css/under.css" rel="stylesheet">
+  <link href="css/grayscale.css" rel="stylesheet">
+
 </head>
 
-<body>
-  <div class="container">
-    <h1 class="display-1">Coming Soon</h1>
-    <h2 class="display-2 mt-5" id="time"></h2>
-  </div>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a style="font-size: 50px" class="navbar-brand js-scroll-trigger" href="#page-top">&#x263A;</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Eralp Kor</h1>
+        <h2 id="things" class="text-white-50 mx-auto mt-5 mb-5"></h2>
+
+        <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">About Me</h2>
+          <p class="text-white-50">Creative web developer dedicated to building and optimizing the performance of
+            user-centric, high-impact websites for nationwide, F500 and global companies. Leverage technical, analytical
+            and problem-solving skills to create dynamic, high-speed websites, apps and platforms fueling competitive
+            advantage and revenue growth.</p>
+        </div>
+      </div>
+      <img src="img/ipad.png" class="img-fluid" alt="">
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section bg-light">
+    <div class="container">
+
+      <!-- Featured Project Row -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-xl-8 col-lg-7">
+          <!-- <h1 id="sample">Hello</h1> -->
+          <!-- <svg class="map-chart">
+            
+          </svg> -->
+          <div class="map-char">
+              <script src="https://gist.github.com/eralpkor/02e7ac9633e7770b41c6aea45f788d0c.js"></script>
+          </div>
+          <!-- <img class="img-fluid mb-3 mb-lg-0" src="img/bg-masthead.jpg" alt=""> -->
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4>Node.js backup script</h4>
+            <p class="text-black-50 mb-0"><a href="https://www.eralpkor/blog/">Rest of the code.</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project One Row -->
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/relaxing_norman.JPG" alt="">
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                <h4 class="text-white">Norman</h4>
+                <p class="mb-0 text-white-50">A whole new world, a dazzling place I never knew, but now from way up here, it's crystal clear, that now I'm in a whole new world.
+                  <br>I like to think I am the perfect mix! A little playful, a little sleepy, a little independent
+                  <br>We adopted Norman on May 18 2013. He is domestic long hair black cat and <span id="norman-age"></span> years old now. He is a very quite cat, and most of the day he likes to sleep.</p>
+                <hr class="d-none d-lg-block mb-0 ml-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Two Row -->
+      <div class="row justify-content-center no-gutters">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/sunny_sleeping_on_laptop.jpeg" alt="">
+        </div>
+        <div class="col-lg-6 order-lg-first">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-right">
+                <h4 class="text-white">Sunny</h4>
+                <p class="mb-0 text-white-50">Who says cat don't fetch, I do that all morning long and in the evenings. Just trow my favorite toy I go get it.
+                  <br>We also adopted Sunny from SPCA. Sunny is a brown tabby. He is <span id="sunny-age"></span> years old.</p>
+                <hr class="d-none d-lg-block mb-0 mr-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Signup Section -->
+  <section id="signup" class="signup-section">
+    <div class="container">
+      <div class="row">
+       <!--  <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+
+          <form class="form-inline d-flex">
+            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+              placeholder="Enter email address...">
+            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
+          </form>
+
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section bg-black">
+    <div class="container text-center">
+      <div class="container">
+        <h6 class="text-white-50">Be awesome and say hello!</h2>
+          <div class="row justify-content-center mt-4">
+
+            <!-- <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                      <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Address</h4>
+                      <hr class="my-4">
+                      <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                    </div>
+                  </div>
+                </div> -->
+
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+              <div class="card py-4 h-100">
+                <div class="card-body text-center">
+                  <i class="fas fa-envelope text-primary mb-2"></i>
+                  <h4 class="text-uppercase m-0">Email</h4>
+                  <hr class="my-4">
+                  <div class="small text-black-50">
+                    <a href="mailto:info@eralpkor.com">eralp.ny@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-4 mb-3 mb-md-0">
+                  <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                      <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Phone</h4>
+                      <hr class="my-4">
+                      <div class="small text-black-50">+1 (555) 902-8832</div>
+                    </div>
+                  </div>
+                </div> -->
+          </div>
+      </div>
 
 
+      <div class="social d-flex justify-content-center">
+        <a href="https://twitter.com/Eralp_K" target="_blank" class="mx-2">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/eralpkor/" target="_blank" class="mx-2">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/eralpkor" target="_blank" class="mx-2">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; Eralp Kor <span id="year"></span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- D3 Library -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <script src="./js/portfolio.js"></script>
+  <script src="./js/visi.js"></script>
   <script>
-    let showTime = document.getElementById('time');
-    const countDownDate = new Date('May 18, 2019 21:31:20').getTime();
-    var some = new Date().toTimeString().substr(0,5);
 
-    const update = setInterval(function () {
-      const now = new Date().getTime();
-      let dist = countDownDate - now;
-      let days = Math.floor(dist / (1000 * 60 * 60 * 24));
-      days = (days < 10 ? '0' : '') + days;
-      let hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      hours = (hours < 10 ? '0' : '') + hours;
-      let minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-      minutes = (minutes < 10 ? '0' : '') + minutes;
-      let seconds = Math.floor((dist % (1000 * 60)) / 1000);
-      seconds = (seconds < 10 ? '0' : '') + seconds;
-      
-      showTime.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
-    
-    }, 1000);
-    
-    
   </script>
 </body>
 
