@@ -1,21 +1,23 @@
-/* .map-chart {
-  color: blue;
-  background-color: brown;
-} */
 
-path {
-  
-  fill: #ccc;
-}
-
-path:hover {
-  fill: blue;
-}
 
 #tiny {
   border-radius: 50%;
+  animation-name: fade;
+  animation-duration: 3s;
 }
+
+@keyframes fade {
+  50% {
+    left: 60%;
+    opacity: 0.1;
+  }
+}
+
 #smiley:hover {
   transform: scale(1.1);
   /* color: whitesmoke !important; */
 }
+
+/* .experience {
+  font-size: 60px;
+} */
