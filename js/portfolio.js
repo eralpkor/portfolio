@@ -1,7 +1,7 @@
 
 // Home page type effect
 var typed = new Typed('#things', {
-  strings: ["Frontend Developer"],
+  strings: ["Full Stack Developer"],
   typeSpeed: 100,
   loop: false,
   showCursor: false
