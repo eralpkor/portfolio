@@ -10,6 +10,3 @@ var typed = new Typed('#things', {
 // Footer current year
 var year = new Date().getFullYear();
 document.getElementById('year').textContent = year;
-// document.getElementById('norman-age').textContent = year - 2013;
-// document.getElementById('sunny-age').textContent = year - 2017;
-
