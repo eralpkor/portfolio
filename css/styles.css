@@ -18,9 +18,9 @@
   /* color: whitesmoke !important; */
 }
 
-/* .experience {
-  font-size: 60px;
-} */
+.experience {
+  margin-bottom: 5%;
+}
 
 #file-nodebackup-js {
   height: 300px;
@@ -29,3 +29,4 @@
 .code-section {
   padding-bottom: 5rem;
 }
+
